@@ -21,31 +21,31 @@ app.get('/', function(req, res) {
 });
 
 app.get('/lists', function(req, res) {
-  
+  res.send('lists!');
 });
 
 app.post('/lists', function(req, res) {
-
+  res.send('list created!');
 });
 
 app.delete('/lists/:id', function(req, res) {
-
+  res.send('list deleted!');
 });
 
 app.get('/lists/:id/todos', function(req, res) {
-
+  res.send('todo get!');
 });
 
 app.post('/lists/:id/todos', function(req, res) {
-
+  res.send('todo post!');
 });
 
 app.put('/todos/:id', function(req, res) {
-
+  res.send('todo put!');
 });
 
 app.delete('/todos/:id', function(req, res) {
-
+  res.send('todo delete!');
 });
 
 app.listen(3000);
