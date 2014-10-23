@@ -9,5 +9,13 @@ describe('TodoList', function() {
 
       expect(list.title).to.equal("My List");
     });
+
+    it('should have a description', function() {
+      var list = models.TodoList.build({
+        description: "Todolist description"
+      });
+
+      expect(list.description).to.equal("Todolist description");
+    });
   });
 });
