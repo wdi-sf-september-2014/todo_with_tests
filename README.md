@@ -1,8 +1,18 @@
 # Todo with Tests
 
+Install grunt cli
+
+```
+$ npm install -g grunt-cli
+```
+
+Install dependencies from `package.json`
+
 ```
 $ npm install
 ```
+
+Create the database in your postgres server
 
 ```
 $ createdb todo_with_tests_development
