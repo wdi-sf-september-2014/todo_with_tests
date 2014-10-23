@@ -29,5 +29,21 @@ describe('TodoList', function() {
         })
       ).to.be.rejectedWith(ValidationError).notify(done);
     });
+
+    it('should be invalid for descriptions < 5 characters', function(done) {
+      expect(
+        models.TodoList.create({
+          description: "asdf"
+        })
+      ).to.be.rejectedWith(ValidationError).notify(done);
+    });
+
+    it('should be invalid for descriptions > 140 characters', function(done) {
+      expect(
+        models.TodoList.create({
+          description: "asdfasdfasasdfasdfasasdfasdfasasdfasdfasasdfasdfasasdfasdfasasdfasdfasasdfasdfasasdfasdfasasdfasdfasasdfasdfasdfasdfasasdfasdfasasdfasdfasasdfasdfasasdfasdfasasdfasdfasasdfasdfasasdfasdfasasdfasdfasasdfasdfasasdf"
+        })
+      ).to.be.rejectedWith(ValidationError).notify(done);
+    });
   });
 });

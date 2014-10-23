@@ -8,7 +8,12 @@ module.exports = function(sequelize, DataTypes) {
         len: [0, 100] 
       }
     },
-    description: DataTypes.STRING
+    description: {
+      type: DataTypes.STRING,
+      validate: {
+        len: [5, 140]
+      }
+    }
   }, {
     classMethods: {
       associate: function(models) {
