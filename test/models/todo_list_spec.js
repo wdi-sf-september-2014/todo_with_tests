@@ -18,4 +18,16 @@ describe('TodoList', function() {
       expect(list.description).to.equal("Todolist description");
     });
   });
+
+  describe('validations', function() {
+    var ValidationError = require('sequelize').ValidationError;
+
+    it('should be invalid for titles > 100 characters', function(done) {
+      expect(
+        models.TodoList.create({
+          title: "asdfasdfasasdfasdfasasdfasdfasasdfasdfasasdfasdfasasdfasdfasasdfasdfasasdfasdfasasdfasdfasasdfasdfasasdf"
+        })
+      ).to.be.rejectedWith(ValidationError).notify(done);
+    });
+  });
 });
