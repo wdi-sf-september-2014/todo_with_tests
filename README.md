@@ -19,14 +19,10 @@ $ createdb todo_with_tests_development
 ```
 
 ## Required functionality:
-* Create a todo list
-  * A todo list should have a title and a description
-  * Titles may be at most 100 characters
-  * The description must be at least 5 characters long and at most 140
-    characters
 
 * Create a todo item for a todo list
   * A todo item should have a required title
+  * A todo item should not be creatable without a todo list specified
   * The title must be at least 5 characters long and at most 100
     characters
   * You should be able to complete a todo item
@@ -37,3 +33,8 @@ $ createdb todo_with_tests_development
 * Delete a todo list
   * This should also delete all of its items, if there are any
 * Delete a todo
+* Create a todo list
+  * A todo list should have a title and a description
+  * Titles may be at most 100 characters
+  * The description must be at least 5 characters long and at most 140
+    characters
